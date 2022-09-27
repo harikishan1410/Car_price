@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+/*    .row.content {height: 150px}
+*/    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      padding: 38px;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+     <a class="navbar-brand" href="#">Navbar</a>
+  <!-- Navbar content -->
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-8 sidenav">
+      <form action="{{url_for('predict')}}"method='post'>
+
+        <div class="form-row">
+    <br>
+    <br>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">BRAND</label>
+      <input type="text" class="form-control is-valid" id="validationServer01" name="validationServer01" placeholder="Name" value="Honda" required>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">MODEL</label>
+      <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" name="validationServer02" value="Brio" required>
+      
+    </div>
+    </div>
+
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer03">FUEL TYPE</label>
+      <input type="text" class="form-control is-valid" id="validationServer03" name="validationServer03" placeholder="Enter Fuel type" value="Petrol" required>
+
+
+      <br>
+      <br>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer04">CITY</label>
+      <input type="text" class="form-control is-valid" id="validationServer04" name="validationServer04" placeholder="Enter city name" value="Mumbai" required>
+      
+    </div>
+    </div>
+
+
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer05">YEAR</label>
+      <input type="text" class="form-control is-valid" id="validationServer05" name="validationServer05" placeholder="Enter Year" value="2016" required>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer06">DISTANCE TRAVELLED</label>
+      <input type="text" class="form-control is-valid" id="validationServer06" name="validationServer06" placeholder="Enter KM driven" value="9680.0" required>
+      <br>
+      <br>
+     
+    </div>
+
+    </div>
+
+
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer07">CAR AGE</label>
+      <input type="text" class="form-control is-valid" id="validationServer07" name="validationServer07" placeholder="Enter Car age" value="5.0" required>
+     
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer08">New and Less Used</label>
+      <input type="text" class="form-control is-valid" id="validationServer08" name="validationServer08" placeholder="Enter New and Less used" value="0" required>
+     
+    </div>
+    </div>
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer09">INV CAR PRICE</label>
+      <input type="text" class="form-control is-valid" id="validationServer09" name="validationServer09" placeholder="Enter Inv car Price" value="0.000002" required>
+      <br>
+      <br>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer10">INV CAR DIST</label>
+      <input type="text" class="form-control is-valid" id="validationServer10" name="validationServer10" placeholder="Enter Inv Car Dist" value="0.000103" required>
+    </div>
+    </div>
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer11">INV CAR AGE</label>
+      <input type="text" class="form-control is-valid" id="validationServer11" name="validationServer11" placeholder="Enter Inv Car Age" value="0.2" required>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer12">STD INVPRICE</label>
+      <input type="text" class="form-control is-valid" id="validationServer12" name="validationServer12" placeholder="Enter Std InvPrice" value="0.143417" required>
+      <br>
+      <br>
+      
+    </div>
+    </div>
+
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer13">STD INVDISTANCE TRAVELLED</label>
+      <input type="text" class="form-control is-valid" id="validationServer13" name="validationServer13" placeholder="Enter Std InvDistance Travelled" value="0.03573" required>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer14">STD INVRANK</label>
+      <input type="text" class="form-control is-valid" id="validationServer14" name="validationServer14" placeholder="Enter Std InvRank" value="0.132143" required>
+      
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer15">BEST BUY1</label>
+      <input type="text" class="form-control is-valid" id="validationServer15" name="validationServer15" placeholder="Enter BestBuy1" value="677.134239" required>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer16"></label>
+      <br>
+      <br>
+      <div class="col-md-4 mb-3">
+      <button type="Submit" class="btn btn-primary">Primary</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p style="color:red">{{ prediction_text }}</p>
+
+    </div>
+
+        
+
+
+      </form>
+
+  
+    </div>
+    <br><br>
+
+    
+
+    </div>
+
+
+
+    <div >
+       <img src = "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class = "img-responsive" alt = "Online Training">
+    </div>   
+</div>
+
+</body>
+</html>
